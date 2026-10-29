@@ -1,0 +1,43 @@
+CREDIT AGREEMENT
+
+Dated as of 1 March 2024, among EXAMPLE HOLDINGS INC., as Borrower, the Lenders
+party hereto, and EXAMPLE BANK, N.A., as Administrative Agent.
+
+This document is synthetic. It exists so that the pipeline, the gate and the
+eval can be run end to end without redistributing a real agreement. The real
+gold set comes from covenant-definition-graph, which fetches its sources from
+EDGAR rather than vendoring them.
+
+ARTICLE I. DEFINITIONS
+
+"Consolidated EBITDA" means, for any period, Consolidated Net Income for such
+period adjusted to add back interest expense, taxes, depreciation and
+amortisation, in each case to the extent deducted in computing Consolidated Net
+Income.
+
+"Consolidated Leverage Ratio" means, as of any date of determination, the ratio
+of Consolidated Total Debt as of such date to Consolidated EBITDA for the four
+fiscal quarter period most recently ended.
+
+"Consolidated Interest Coverage Ratio" means, for any period, the ratio of
+Consolidated EBITDA for such period to Consolidated Interest Expense for such
+period.
+
+"Consolidated Total Debt" means, as of any date, the aggregate principal amount
+of all Indebtedness of the Borrower and its Restricted Subsidiaries outstanding
+on such date.
+
+ARTICLE IX. FINANCIAL COVENANTS
+
+Section 9.1. Maximum Leverage. The Borrower shall not permit the "Consolidated
+Leverage Ratio", as of the last day of each fiscal quarter, to be greater than
+4.00 to 1.00.
+
+Section 9.2. Minimum Interest Coverage. The Borrower shall not permit the
+"Consolidated Interest Coverage Ratio", as of the last day of each fiscal
+quarter, to be less than 2.50:1.00.
+
+Section 9.3. Restricted Payments. The Borrower shall not make any Restricted
+Payment unless, after giving pro forma effect thereto, the "Consolidated
+Leverage Ratio" would not exceed 3.00 to 1.00 and no Default has occurred and is
+continuing.

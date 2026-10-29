@@ -1,0 +1,15 @@
+doc_id,field_path,value,citation_section
+sample_agreement,covenants.9_1.threshold,4.00 to 1.00,Section 9.1
+sample_agreement,covenants.9_1.direction,max,Section 9.1
+sample_agreement,covenants.9_1.type,maintenance,Section 9.1
+sample_agreement,covenants.9_1.test_frequency,each fiscal quarter,Section 9.1
+sample_agreement,covenants.9_1.defined_term,Consolidated Leverage Ratio,Section 9.1
+sample_agreement,covenants.9_2.threshold,2.50 to 1.00,Section 9.2
+sample_agreement,covenants.9_2.direction,min,Section 9.2
+sample_agreement,covenants.9_2.type,maintenance,Section 9.2
+sample_agreement,covenants.9_2.test_frequency,each fiscal quarter,Section 9.2
+sample_agreement,covenants.9_2.defined_term,Consolidated Interest Coverage Ratio,Section 9.2
+sample_agreement,covenants.9_3.threshold,3.00 to 1.00,Section 9.3
+sample_agreement,covenants.9_3.direction,max,Section 9.3
+sample_agreement,covenants.9_3.type,incurrence,Section 9.3
+sample_agreement,covenants.9_3.defined_term,Consolidated Leverage Ratio,Section 9.3

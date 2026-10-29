@@ -1,0 +1,130 @@
+{
+  "accuracy": 0.7143,
+  "citation_validity": 1.0,
+  "gold_total": 14,
+  "counts": {
+    "match": 10,
+    "wrong_value": 0,
+    "bad_citation": 0,
+    "missing_field": 4,
+    "hallucinated_field": 0,
+    "unresolved_defined_term": 0
+  },
+  "dead_letter": {
+    "ratio_threshold_format": 1
+  },
+  "rows": [
+    {
+      "doc_id": "sample_agreement",
+      "field_path": "covenants.9_1.defined_term",
+      "outcome": "missing_field",
+      "expected": "Consolidated Leverage Ratio",
+      "actual": "",
+      "note": ""
+    },
+    {
+      "doc_id": "sample_agreement",
+      "field_path": "covenants.9_1.direction",
+      "outcome": "match",
+      "expected": "max",
+      "actual": "max",
+      "note": ""
+    },
+    {
+      "doc_id": "sample_agreement",
+      "field_path": "covenants.9_1.test_frequency",
+      "outcome": "match",
+      "expected": "each fiscal quarter",
+      "actual": "each fiscal quarter",
+      "note": ""
+    },
+    {
+      "doc_id": "sample_agreement",
+      "field_path": "covenants.9_1.threshold",
+      "outcome": "match",
+      "expected": "4.00 to 1.00",
+      "actual": "4.00 to 1.00",
+      "note": ""
+    },
+    {
+      "doc_id": "sample_agreement",
+      "field_path": "covenants.9_1.type",
+      "outcome": "match",
+      "expected": "maintenance",
+      "actual": "maintenance",
+      "note": ""
+    },
+    {
+      "doc_id": "sample_agreement",
+      "field_path": "covenants.9_2.defined_term",
+      "outcome": "missing_field",
+      "expected": "Consolidated Interest Coverage Ratio",
+      "actual": "",
+      "note": ""
+    },
+    {
+      "doc_id": "sample_agreement",
+      "field_path": "covenants.9_2.direction",
+      "outcome": "match",
+      "expected": "min",
+      "actual": "min",
+      "note": ""
+    },
+    {
+      "doc_id": "sample_agreement",
+      "field_path": "covenants.9_2.test_frequency",
+      "outcome": "match",
+      "expected": "each fiscal quarter",
+      "actual": "each fiscal quarter",
+      "note": ""
+    },
+    {
+      "doc_id": "sample_agreement",
+      "field_path": "covenants.9_2.threshold",
+      "outcome": "missing_field",
+      "expected": "2.50 to 1.00",
+      "actual": "",
+      "note": ""
+    },
+    {
+      "doc_id": "sample_agreement",
+      "field_path": "covenants.9_2.type",
+      "outcome": "match",
+      "expected": "maintenance",
+      "actual": "maintenance",
+      "note": ""
+    },
+    {
+      "doc_id": "sample_agreement",
+      "field_path": "covenants.9_3.defined_term",
+      "outcome": "missing_field",
+      "expected": "Consolidated Leverage Ratio",
+      "actual": "",
+      "note": ""
+    },
+    {
+      "doc_id": "sample_agreement",
+      "field_path": "covenants.9_3.direction",
+      "outcome": "match",
+      "expected": "max",
+      "actual": "max",
+      "note": ""
+    },
+    {
+      "doc_id": "sample_agreement",
+      "field_path": "covenants.9_3.threshold",
+      "outcome": "match",
+      "expected": "3.00 to 1.00",
+      "actual": "3.00 to 1.00",
+      "note": ""
+    },
+    {
+      "doc_id": "sample_agreement",
+      "field_path": "covenants.9_3.type",
+      "outcome": "match",
+      "expected": "incurrence",
+      "actual": "incurrence",
+      "note": ""
+    }
+  ]
+}

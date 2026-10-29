@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+out/
+eval/reports/latest.md
+eval/reports/latest.json
+.pytest_cache/
+.DS_Store

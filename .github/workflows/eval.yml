@@ -1,0 +1,62 @@
+name: eval
+
+# A quality gate on a non-deterministic component. The eval runs on any change
+# that can move the numbers -- the prompt, the schema, the gate, the extractor
+# itself -- and a regression fails the build.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - 'extractor/**'
+      - 'eval/**'
+      - 'sql/**'
+      - 'tests/**'
+      - '.github/workflows/eval.yml'
+
+jobs:
+  test-and-eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install
+        run: pip install jsonschema pytest
+
+      - name: Tests
+        run: pytest -q
+
+      - name: Schema and DDL have not drifted
+        run: |
+          python3 sql/generate.py
+          git diff --exit-code sql/ || {
+            echo "::error::sql/ is stale. Run 'make sql' and commit the result."
+            exit 1
+          }
+
+      # The regex baseline, so CI needs no credentials and costs nothing. Point
+      # MODEL_BACKEND at vertex with a workload-identity step to gate the real
+      # model instead.
+      - name: Extract and score
+        run: |
+          python3 -m extractor.cli eval/fixtures/sample_agreement.txt --sections 9.1 9.2 9.3
+          python3 eval/score.py --label "ci ${{ github.sha }}"
+
+      - name: Gate
+        run: |
+          python3 eval/gate.py \
+            --report eval/reports/latest.json \
+            --baseline eval/reports/baseline.json \
+            --min-accuracy 0.80 \
+            --max-regression 0.03
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-report
+          path: eval/reports/latest.*

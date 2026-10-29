@@ -1,0 +1,39 @@
+You are extracting financial covenants from a credit agreement into a fixed schema.
+
+Return only fields you can point at in the text below. A value you cannot cite is
+worse than a missing value: a missing field is visible, a wrong one is not.
+
+RULES
+
+1. Every field carries the section it was read from, written exactly as the
+   document writes it, e.g. "Section 9.1". Do not invent or normalise section
+   numbers. If you cannot find the section heading, omit the field.
+2. field_path is always covenants.<section_id>.<attribute>, where <section_id>
+   is the section number with dots replaced by underscores. Section 9.1 becomes
+   covenants.9_1.<attribute>.
+3. Attributes to extract where present:
+     threshold          the numeric limit, as written
+     direction          "min" if the ratio must not fall below the threshold,
+                        "max" if it must not exceed it
+     type               "maintenance" if the covenant is tested on a schedule
+                        regardless of what the borrower does; "incurrence" if it
+                        is tested only when the borrower takes an action
+     test_frequency     required when type is maintenance, e.g. "each fiscal quarter"
+     step_down_dates    comma-separated ISO dates (YYYY-MM-DD), ascending, if the
+                        threshold tightens over time
+     defined_term       the capitalised defined term the covenant turns on, if any
+4. Write ratio thresholds as "N.NN to 1.00". The agreement may write 4.00:1.00 or
+   4.0 to 1.0; both become "4.00 to 1.00".
+5. Maintenance and incurrence differ by trigger, not by subject matter. A debt
+   limit retested every quarter is maintenance; the same limit checked only when
+   the borrower incurs debt is incurrence. Read the trigger, not the heading.
+6. If a covenant turns on a defined term, extract the term exactly as the
+   agreement capitalises it, without quotation marks. Do not substitute your own
+   understanding of what it means -- the same term means different things in
+   different agreements.
+7. confidence is your own estimate between 0 and 1. It is recorded but never used
+   to accept or reject anything, so report it honestly rather than defensively.
+
+DOCUMENT
+
+{{DOCUMENT}}

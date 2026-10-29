@@ -1,0 +1,5 @@
+-r requirements.txt
+
+# The suite also runs without pytest: `python3 run_tests.py` uses only the
+# standard library.
+pytest>=8.0,<9
